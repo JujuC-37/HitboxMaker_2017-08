@@ -10,7 +10,7 @@ body{
 
 header{
     text-align: center;
-    background-color: violet;
+    background-color: #D6C8B9;
     padding: 5px;
 }
 
@@ -21,7 +21,7 @@ header{
 
 footer{
     text-align: center;
-    background-color: lightgrey;
+    background-color: #D6C8B9;
     padding: 5px;
 }
 

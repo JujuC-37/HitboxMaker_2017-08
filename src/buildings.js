@@ -16,6 +16,6 @@ const logos_buildings = {
 // ----- display -----
 export function displayBuildingsList() {
     Object.keys(logos_buildings).forEach( key => {
-        $toolsList.innerHTML += `<div><img src="${logos_buildings[key].src}" alt="${logos_buildings[key].alt}" title="${logos_buildings[key].title}"</div>`
+        $toolsList.innerHTML += `<div class="selectableTool"><img src="${logos_buildings[key].src}" alt="${logos_buildings[key].alt}" title="${logos_buildings[key].title}"</div>`
     } );
 }

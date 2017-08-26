@@ -7,6 +7,6 @@ const logos_tools = {
 // ----- display -----
 export function displayToolsList() {
     Object.keys(logos_tools).forEach( key => {
-        $toolsList.innerHTML += `<div><img src="${logos_tools[key].src}" alt="${logos_tools[key].alt}" title="${logos_tools[key].title}"</div>`
+        $toolsList.innerHTML += `<div class="selectableTool"><img src="${logos_tools[key].src}" alt="${logos_tools[key].alt}" title="${logos_tools[key].title}"</div>`
     } );
 }

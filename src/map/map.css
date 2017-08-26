@@ -3,7 +3,7 @@
 }
 
 #map{
-    background-color: lightblue;
+    background-color: #FAE8C2;
     padding: 5px;
     flex: 1;
 }
@@ -17,7 +17,23 @@
 .tile{
     height: var(--sizeTile);
     width: var(--sizeTile);
-    background-image: url("../images/tile_green_01.svg");
     background-size: var(--sizeTile) var(--sizeTile);
     text-align: center;
+    border: 1px solid grey;
+}
+
+.backgroundTile_0{
+    background-image: url("../images/tile_green_00.svg");
+}
+
+.backgroundTile_1{
+    background-image: url("../images/tile_green_01.svg");
+}
+
+.backgroundTile_2{
+    background-image: url("../images/tile_green_02.svg");
+}
+
+.backgroundTile_3{
+    background-image: url("../images/tile_green_03.svg");
 }
