@@ -1,0 +1,25 @@
+:root{
+    --widthToolsBarImg: 50px;
+    --marginToolsBarImg: 5px;
+    --nbToolsPerLine: 3;
+
+    --widthToolsBar: calc( var(--nbToolsPerLine) * ( var(--widthToolsBarImg) + 2*var(--marginToolsBarImg)) );
+}
+
+#toolsBar{
+    background-color: yellow;
+    padding: 5px;
+    width: var(--widthToolsBar);
+}
+
+#toolsList{
+    background-color: cyan;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+#toolsList img{
+    width: var(--widthToolsBarImg);
+    margin: var(--marginToolsBarImg);
+}

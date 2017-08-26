@@ -1,0 +1,23 @@
+:root{
+    --sizeTile: 60px;
+}
+
+#map{
+    background-color: lightblue;
+    padding: 5px;
+    flex: 1;
+}
+
+#map table{
+    border-collapse: collapse;
+    border: none;
+    margin: auto;
+}
+
+.tile{
+    height: var(--sizeTile);
+    width: var(--sizeTile);
+    background-image: url("../images/tile_green_01.svg");
+    background-size: var(--sizeTile) var(--sizeTile);
+    text-align: center;
+}

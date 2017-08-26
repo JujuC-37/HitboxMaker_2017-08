@@ -1,0 +1,30 @@
+:root{
+    --widthBody: 1100px;
+}
+
+body{
+    font-family: Arial, 'Trebhuchet MS', sans-serif;
+    width: var(--widthBody);
+    margin: auto;
+}
+
+header{
+    text-align: center;
+    background-color: violet;
+    padding: 5px;
+}
+
+#playArea{
+    display: flex;
+    flex-direction: row;
+}
+
+footer{
+    text-align: center;
+    background-color: lightgrey;
+    padding: 5px;
+}
+
+footer p{
+    margin: 0;
+}

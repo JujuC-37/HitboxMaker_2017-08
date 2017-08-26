@@ -1,0 +1,14 @@
+{
+  "name": "201708gamejam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "poi"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "poi": "^9.3.2"
+  }
+}
