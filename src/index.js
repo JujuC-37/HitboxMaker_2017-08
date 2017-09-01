@@ -1,5 +1,5 @@
 import "./style.css";
-import "./dataBar/dataBar.js";
+import "./dataCityBar/dataCityBar.js";
 import {displayMap} from "./map/map.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
 

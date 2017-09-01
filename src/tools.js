@@ -1,12 +1,12 @@
-const $toolsList = document.getElementById('toolsList');
+import {toolsList} from "./data.js";
 
-const logos_tools = {
-    broom: {src: require('./images/broom.svg'), alt: 'logo_broom', title:'Broom'}
-};
+const $toolsList = document.getElementById('toolsList');
 
 // ----- display -----
 export function displayToolsList() {
-    Object.keys(logos_tools).forEach( key => {
-        $toolsList.innerHTML += `<div class="selectableTool"><img src="${logos_tools[key].src}" alt="${logos_tools[key].alt}" title="${logos_tools[key].title}"</div>`
+    Object.keys(toolsList).forEach( key => {
+        $toolsList.innerHTML += `<div class="selectableTool">
+                <img src="${toolsList[key].logo.src}" alt="${toolsList[key].logo.alt}" title="${toolsList[key].logo.title}"
+            </div>`
     } );
 }

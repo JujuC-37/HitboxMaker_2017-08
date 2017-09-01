@@ -1,12 +1,8 @@
 import "./map.css";
+import {mapProperties} from "../data.js";
 
 const $map = document.getElementById('map');
 
-const mapProperties = {
-    lines: 8,
-    columns: 12,
-    nbBackgrounds: 4
-};
 
 function createMap() {
     let contentMap = `<table>`;
