@@ -11,5 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "poi": "^9.3.2"
+  },
+  "poi": {
+    "dist": "./docs",
+    "homepage": "./",
+    "html": {
+      "template": "./src/index.html"
+    }
   }
 }
