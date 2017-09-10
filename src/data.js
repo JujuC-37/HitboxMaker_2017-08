@@ -2,11 +2,32 @@
 // --------------------------------------- General ---------------------------------------
 // ---------------------------------------------------------------------------------------
 
-export const mapProperties = {
-    lines: 8,
-    columns: 12,
-    nbBackgrounds: 4
-};
+export class Tile {
+    constructor(idBackground, building) {
+        this.background = idBackground;
+        this.building = building;
+    }
+}
+
+export class MapCity {
+    constructor(nbLines, nbColumns, nbBackgrounds, arrayTiles) {
+        this.nbLines = nbLines;
+        this.nbColumns = nbColumns;
+        this.nbBackgrounds = nbBackgrounds;
+        this.arrayTiles = arrayTiles;
+    }
+}
+
+export class PlayingGame {
+    constructor(mapCity) {
+        this.cityMap = mapCity;
+        this.selectedTool = null;
+        this.selectedTile = null;
+        this.typeSelectedTool = null;
+        //resources
+    }
+}
+
 
 // ---------------------------------------------------------------------------------------
 // --------------------------------------- Images ----------------------------------------
@@ -104,5 +125,6 @@ class Tool {
 const broomObject = new Tool('broom', 'Broom', 'Remove building', logosList.broom);
 
 export const toolsList = {
+    // a new tool must be added in object logosList also
     broom: broomObject
 };

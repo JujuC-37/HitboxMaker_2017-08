@@ -1,5 +1,6 @@
 :root{
     --sizeTile: 60px;
+    --widthTileImg: 55px;
 }
 
 #map{
@@ -20,6 +21,11 @@
     background-size: var(--sizeTile) var(--sizeTile);
     text-align: center;
     border: 1px solid grey;
+}
+
+.tile img{
+    width: var(--widthTileImg);;
+    max-height: var(--widthTileImg);
 }
 
 .backgroundTile_0{
