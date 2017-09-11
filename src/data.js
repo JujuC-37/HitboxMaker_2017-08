@@ -21,6 +21,7 @@ export class MapCity {
 export class PlayingGame {
     constructor(mapCity) {
         this.cityMap = mapCity;
+        this.constrBuildingAccount = {}; // to count number of constructed building for each type building already used
         this.selectedTool = null;
         this.selectedTile = null;
         this.typeSelectedTool = null;

@@ -1,6 +1,10 @@
 import "./map.css";
 import {MapCity, Tile} from "../data.js";
 
+// ------------------------------------------------------------------------------------------
+// ---------------------------------------- Creation ----------------------------------------
+// ------------------------------------------------------------------------------------------
+
 // create an array 2 dimensions with objects of type Tile
 function createTilesArray(nbLines, nbColumns, nbBackgrounds) {
     const tilesArray = Array(nbLines).fill(null);
@@ -34,7 +38,7 @@ function createContentOfSectionHtmlMap(mapCity) {
         content += `<tr>`;
 
         for(let col = 0; col < mapCity.nbColumns; col++) {
-            content += `<td class="tile line_${line} col_${col} backgroundTile_${mapCity.arrayTiles[line][col].background}"></td>`;
+            content += `<td id="lin-${line}_col-${col}" class="tile backgroundTile_${mapCity.arrayTiles[line][col].background}"></td>`;
         }
 
         content += `</tr>`;        
@@ -47,4 +51,18 @@ function createContentOfSectionHtmlMap(mapCity) {
 export function displayMap(mapCity) {
     const $map = document.getElementById('map');
     $map.innerHTML = createContentOfSectionHtmlMap(mapCity);
+}
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------ Using -----------------------------------------
+// ------------------------------------------------------------------------------------------
+
+//return line number of tile with id tile (string) in parameter
+export function renderLineOfTile(tileID) {
+    return tileID.split('_')[0].split('-')[1];
+}
+
+//return column number of tile with id tile (string) in parameter
+export function renderColumnOfTile(tileID) {
+    return tileID.split('_')[1].split('-')[1];
 }

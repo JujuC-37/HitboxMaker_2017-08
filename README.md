@@ -6,6 +6,8 @@ I created this projet during a local Game Jam.
 
 I chose to realize a new city-builder, as my Ludum Dare 39 project, with criticism of my developers friends on my first project.
 
+This game, in development, is available on this this page : juliette-c.github.io/HitboxMaker_2017-08/
+
 ## Resources
 
 I chose to use same graphics than my first project :

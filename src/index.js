@@ -3,6 +3,8 @@ import {displayDataBar} from "./dataCityBar/dataCityBar.js";
 import {displayMap, createMap} from "./map/map.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
 import {PlayingGame, logosList, buildingsList, toolsList} from "./data.js";
+import {constructBuildingOnTile} from "./buildings.js";
+import {useTool} from "./tools.js";
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Initial ----------------------------------------
@@ -13,7 +15,7 @@ const playingGame = new PlayingGame(mapCity);
 displayDataBar();
 displayToolsBar();
 displayMap(mapCity);
-
+console.log(playingGame);
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Events -----------------------------------------
@@ -21,9 +23,9 @@ displayMap(mapCity);
 let selectableToolsList = document.getElementsByClassName('selectableTool');
 let mapTiles = document.getElementsByClassName('tile');
 
+// ----- events for tools list -----
 for(let tool of selectableToolsList) {
 
-    // ----- Click -----
     tool.addEventListener('click', e => {
         e.stopPropagation();
 
@@ -47,19 +49,25 @@ for(let tool of selectableToolsList) {
     });
 }
 
+// ----- events for tile ----
 for(let tile of mapTiles) {
+
     tile.addEventListener('click', e => {
         e.stopPropagation();
 
         if(!playingGame.selectedTool) return;
         
         if(playingGame.typeSelectedTool === 'building') {
-            let building = playingGame.selectedTool;
-            tile.innerHTML = `<img src="${building.logo.src}" alt="${building.logo.alt}" title="${building.logo.title}">`;
+            constructBuildingOnTile(tile, playingGame);
         }
+        else if(playingGame.typeSelectedTool === 'tool') {
+            useTool(tile, playingGame);
+        }
+
     });
 }
 
+// ----- general -----
 document.addEventListener('click', e => {
     // style : reset style for all tools
     for(let t of selectableToolsList) {
