@@ -51,7 +51,7 @@ const hospitalLogo =    new Image(require('./images/hospital.svg'), 'logo_hospit
 const circusLogo =      new Image(require('./images/circus.svg'), 'logo_circus', 'Circus');
 const innLogo =         new Image(require('./images/inn.svg'), 'logo_inn', 'Inn');
 const watchTowerLogo =  new Image(require('./images/watchTower.svg'), 'logo_watchTower', 'Watch Tower');
-const wishingWellLogo = new Image(require('./images/wishingWell.svg'), 'logo_wishingWell', 'Wishing Well');
+const wellLogo = new Image(require('./images/well.svg'), 'logo_well', 'Wishing Well');
 
 // ----- Tools -----
 const broomLogo = new Image(require('./images/broom.svg'), 'logo_broom', 'Broom');
@@ -67,7 +67,7 @@ export const logosList = {
     circus:      circusLogo,
     inn:         innLogo,
     watchTower:  watchTowerLogo,
-    wishingWell: wishingWellLogo,
+    well: wellLogo,
     // a new tool must be added in object buildingsList also
     broom:       broomLogo
 };
@@ -94,7 +94,7 @@ const hospitalObject =    new Building('hospital', logosList.hospital, 'Provides
 const circusObject =      new Building('circus', logosList.circus, 'Improves happiness', logosList.circus);
 const innObject =         new Building('inn', logosList.inn, 'Improves happiness', logosList.inn);
 const watchTowerObject =  new Building('watchTower', logosList.watchTower, 'Manages security', logosList.watchTower);
-const wishingWellObject = new Building('wishingWell', logosList.wishingWell, 'Products water', logosList.wishingWell);
+const wellObject = new Building('well', logosList.well, 'Products water', logosList.well);
 
 export const buildingsList = {
     // a new building must be added in object logosList also
@@ -107,7 +107,7 @@ export const buildingsList = {
     circus:      circusObject,
     inn:         innObject,
     watchTower:  watchTowerObject,
-    wishingWell: wishingWellObject
+    well: wellObject
 }
 // ---------------------------------------------------------------------------------------
 // ---------------------------------------- Tools ----------------------------------------
