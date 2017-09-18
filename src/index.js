@@ -2,7 +2,7 @@ import "./style.css";
 import {displayDataBar} from "./dataCityBar/dataCityBar.js";
 import {displayMap, createMap} from "./map/map.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
-import {PlayingGame, logosList, buildingsList, toolsList} from "./data.js";
+import {PlayingGame, buildingsList, toolsList} from "./data.js";
 import {constructBuildingOnTile} from "./buildings.js";
 import {useTool} from "./tools.js";
 

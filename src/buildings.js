@@ -1,4 +1,4 @@
-import {PlayingGame, logosList, buildingsList} from "./data.js";
+import {buildingsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
 
 
