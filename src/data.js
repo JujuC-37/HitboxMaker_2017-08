@@ -54,7 +54,7 @@ const innLogo =         new Image(require('./images/inn.svg'), 'logo_inn', 'Inn'
 const watchTowerLogo =  new Image(require('./images/watchTower.svg'), 'logo_watchTower', 'Watch Tower');
 const wellLogo = new Image(require('./images/well.svg'), 'logo_well', 'Wishing Well');
 
-// ----- Tools -----
+// ----- Instruments -----
 const broomLogo = new Image(require('./images/broom.svg'), 'logo_broom', 'Broom');
 
 export const logosList = {
@@ -69,7 +69,7 @@ export const logosList = {
     inn:         innLogo,
     watchTower:  watchTowerLogo,
     well: wellLogo,
-    // a new tool must be added in object buildingsList also
+    // a new instrument must be added in object buildingsList also
     broom:       broomLogo
 };
 
@@ -95,7 +95,7 @@ const hospitalObject =    new Building('hospital', logosList.hospital, 'Provides
 const circusObject =      new Building('circus', logosList.circus, 'Improves happiness', logosList.circus);
 const innObject =         new Building('inn', logosList.inn, 'Improves happiness', logosList.inn);
 const watchTowerObject =  new Building('watchTower', logosList.watchTower, 'Manages security', logosList.watchTower);
-const wellObject = new Building('well', logosList.well, 'Products water', logosList.well);
+const wellObject =        new Building('well', logosList.well, 'Products water', logosList.well);
 
 export const buildingsList = {
     // a new building must be added in object logosList also
@@ -111,10 +111,10 @@ export const buildingsList = {
     well: wellObject
 }
 // ---------------------------------------------------------------------------------------
-// ---------------------------------------- Tools ----------------------------------------
+// ---------------------------------------- Instruments ----------------------------------------
 // ---------------------------------------------------------------------------------------
 
-class Tool {
+class Instrument {
     constructor(id, name, descr, logo) {
         this.id = id;
         this.name = name;
@@ -123,9 +123,9 @@ class Tool {
     }
 }
 
-const broomObject = new Tool('broom', 'Broom', 'Remove building', logosList.broom);
+const broomObject = new Instrument('broom', 'Broom', 'Remove building', logosList.broom);
 
-export const toolsList = {
-    // a new tool must be added in object logosList also
+export const instrumentsList = {
+    // a new instrument must be added in object logosList also
     broom: broomObject
 };

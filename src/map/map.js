@@ -57,12 +57,12 @@ export function displayMap(mapCity) {
 // ------------------------------------------ Using -----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-//return line number of tile with id tile (string) in parameter
+// return line number of tile with id tile (string) in parameter
 export function renderLineOfTile(tileID) {
     return tileID.split('_')[0].split('-')[1];
 }
 
-//return column number of tile with id tile (string) in parameter
+// return column number of tile with id tile (string) in parameter
 export function renderColumnOfTile(tileID) {
     return tileID.split('_')[1].split('-')[1];
 }

@@ -1,5 +1,5 @@
 import {createBuildingsList} from "../buildings.js";
-import {createToolsList} from "../tools.js";
+import {createInstrumentsList} from "../instruments.js";
 import "./toolsBar.css";
 
 
@@ -21,7 +21,7 @@ export function displayToolsBar() {
 // return content of div toolsList
 function createContentDivToolsList() {
     let content = '';
-    content += createToolsList();
+    content += createInstrumentsList();
     content += createBuildingsList();
     return content;
 }

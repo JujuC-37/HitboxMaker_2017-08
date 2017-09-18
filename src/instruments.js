@@ -1,17 +1,17 @@
-import {toolsList} from "./data.js";
+import {instrumentsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
 
 // ------------------------------------------------------------------------------------------
 // ---------------------------------------- HTML List ---------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// create html content of tools list (div, img) from toolsList object
-export function createToolsList() {
+// create html content of instruments list (div, img) from instrumentsList object
+export function createInstrumentsList() {
     let content = '';
 
-    Object.keys(toolsList).forEach( key => {
-        content += `<div class="selectableTool tool" id="${toolsList[key].id}_toolsList">
-                <img src="${toolsList[key].logo.src}" alt="${toolsList[key].logo.alt}" title="${toolsList[key].logo.title}">
+    Object.keys(instrumentsList).forEach( key => {
+        content += `<div class="selectableTool instruments" id="${instrumentsList[key].id}_toolsList">
+                <img src="${instrumentsList[key].logo.src}" alt="${instrumentsList[key].logo.alt}" title="${instrumentsList[key].logo.title}">
             </div>`
     } );
 
@@ -23,8 +23,8 @@ export function createToolsList() {
 // ----------------------------------------- General ----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// apply function according to chosen tool (in parameter playingGame) on chosen tile (in parameter tile)
-export function useTool(tileDiv, playingGame) {
+// apply function according to chosen instruments (in parameter playingGame) on chosen tile (in parameter tile)
+export function useInstrument(tileDiv, playingGame) {
     let lineTile = renderLineOfTile(tileDiv.id);
     let columnTile = renderColumnOfTile(tileDiv.id);
     let tileChosen = playingGame.cityMap.arrayTiles[lineTile][columnTile];

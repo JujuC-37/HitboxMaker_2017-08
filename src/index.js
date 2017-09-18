@@ -1,10 +1,10 @@
 import "./style.css";
 import {displayDataBar} from "./dataCityBar/dataCityBar.js";
-import {displayMap, createMap} from "./map/map.js";
+import {createMap, displayMap} from "./map/map.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
-import {PlayingGame, buildingsList, toolsList} from "./data.js";
+import {PlayingGame, instrumentsList, buildingsList} from "./data.js";
 import {constructBuildingOnTile} from "./buildings.js";
-import {useTool} from "./tools.js";
+import {useInstrument} from "./instruments.js";
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Initial ----------------------------------------
@@ -36,9 +36,9 @@ for(let tool of selectableToolsList) {
         tool.classList.add('selectedTool');
 
         // save selected tool
-        if(tool.classList.contains('tool')) {
-            playingGame.selectedTool = toolsList[tool.id.split('_')[0]];
-            playingGame.typeSelectedTool = 'tool';
+        if(tool.classList.contains('instruments')) {
+            playingGame.selectedTool = instrumentsList[tool.id.split('_')[0]];
+            playingGame.typeSelectedTool = 'instrument';
         }
         else if (tool.classList.contains('building')) {
             playingGame.selectedTool = buildingsList[tool.id.split('_')[0]];
@@ -60,8 +60,8 @@ for(let tile of mapTiles) {
         if(playingGame.typeSelectedTool === 'building') {
             constructBuildingOnTile(tile, playingGame);
         }
-        else if(playingGame.typeSelectedTool === 'tool') {
-            useTool(tile, playingGame);
+        else if(playingGame.typeSelectedTool === 'instrument') {
+            useInstrument(tile, playingGame);
         }
 
     });
