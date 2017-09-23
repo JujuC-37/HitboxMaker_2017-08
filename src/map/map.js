@@ -1,5 +1,5 @@
 import "./map.css";
-import {MapCity, Tile} from "../data.js";
+import {CityMap, Tile} from "../data.js";
 
 // ------------------------------------------------------------------------------------------
 // ---------------------------------------- Creation ----------------------------------------
@@ -25,20 +25,20 @@ function createTilesArray(nbLines, nbColumns, nbBackgrounds) {
 export function createMap(nbLines, nbColumns, nbBackgrounds) {
     
     const tilesArray = createTilesArray(nbLines, nbColumns, nbBackgrounds);
-    const mapCity = new MapCity(nbLines, nbColumns, nbBackgrounds, tilesArray);
+    const cityMap = new CityMap(nbLines, nbColumns, nbBackgrounds, tilesArray);
     
-    return mapCity;
+    return cityMap;
 }
 
 // create a table to complete section "map" in html
-function createContentOfSectionHtmlMap(mapCity) {
+function createContentOfSectionHtmlMap(cityMap) {
     let content = `<table>`;
 
-    for(let line = 0; line < mapCity.nbLines; line++){
+    for(let line = 0; line < cityMap.nbLines; line++){
         content += `<tr>`;
 
-        for(let col = 0; col < mapCity.nbColumns; col++) {
-            content += `<td id="lin-${line}_col-${col}" class="tile backgroundTile_${mapCity.arrayTiles[line][col].background}"></td>`;
+        for(let col = 0; col < cityMap.nbColumns; col++) {
+            content += `<td id="lin-${line}_col-${col}" class="tile backgroundTile_${cityMap.arrayTiles[line][col].background}"></td>`;
         }
 
         content += `</tr>`;        
@@ -48,9 +48,9 @@ function createContentOfSectionHtmlMap(mapCity) {
 }
 
 // complete the empty section "map" in html
-export function displayMap(mapCity) {
+export function displayMap(cityMap) {
     const $map = document.getElementById('map');
-    $map.innerHTML = createContentOfSectionHtmlMap(mapCity);
+    $map.innerHTML = createContentOfSectionHtmlMap(cityMap);
 }
 
 // ------------------------------------------------------------------------------------------

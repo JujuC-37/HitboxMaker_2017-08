@@ -5,17 +5,20 @@ import {displayToolsBar} from "./toolsBar/toolsBar.js";
 import {PlayingGame, instrumentsList, buildingsList} from "./data.js";
 import {constructBuildingOnTile} from "./buildings.js";
 import {useInstrument} from "./instruments.js";
+import {initializeResources} from "./resources.js";
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Initial ----------------------------------------
 // ------------------------------------------------------------------------------------------
-const mapCity = createMap(8, 12, 4);
-const playingGame = new PlayingGame(mapCity);
+const cityMap = createMap(8, 12, 4);
+const initalResources = initializeResources();
+const playingGame = new PlayingGame(cityMap, initalResources);
 
 displayDataBar();
 displayToolsBar();
-displayMap(mapCity);
-console.log(playingGame);
+displayMap(cityMap);
+
+console.log(playingGame); // to test
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Events -----------------------------------------
@@ -59,9 +62,11 @@ for(let tile of mapTiles) {
         
         if(playingGame.typeSelectedTool === 'building') {
             constructBuildingOnTile(tile, playingGame);
+            console.log(playingGame); // to test
         }
         else if(playingGame.typeSelectedTool === 'instrument') {
             useInstrument(tile, playingGame);
+            console.log(playingGame); // to test
         }
 
     });

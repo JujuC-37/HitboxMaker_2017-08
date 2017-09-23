@@ -50,9 +50,9 @@ function useBroom(tileDiv, tile, playingGame) {
 
     // update data
     playingGame.constrBuildingAccount[tile.building.id]--;
-    tile.building = null; // after decrementing !!!
+    tile.building = null; // after decrementing in playingGame.constrBuildingAccount !!!
 
-    // test
-    console.log('building removed !');
-    console.log(playingGame.constrBuildingAccount);
+    // to test
+    console.log('building removed !'); // to test
+    console.log(playingGame.constrBuildingAccount); // to test
 }

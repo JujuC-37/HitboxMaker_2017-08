@@ -46,7 +46,7 @@ function applyConstruction(tileDiv, tile, playingGame) {
     else
         playingGame.constrBuildingAccount[buildingChosen.id] = 1;
 
-    console.log(playingGame.constrBuildingAccount);
+    console.log(playingGame.constrBuildingAccount); // to test
 
     // update html
     tileDiv.innerHTML = `<img src="${buildingChosen.logo.src}" alt="${buildingChosen.logo.alt}" title="${buildingChosen.logo.title}">`;
