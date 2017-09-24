@@ -68,6 +68,7 @@ for(let tile of mapTiles) {
             useInstrument(tile, playingGame);
             console.log(playingGame); // to test
         }
+        displayDataBar(playingGame.resources); // to test update
 
     });
 }

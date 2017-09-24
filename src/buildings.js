@@ -1,5 +1,6 @@
 import {buildingsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
+import {updateResourcesAfterConstruction} from "./resources.js";
 import {createHtmlElementImg} from "./functions.js";
 
 
@@ -44,6 +45,8 @@ function applyConstruction(tileDiv, tile, playingGame) {
         playingGame.constrBuildingAccount[buildingChosen.id] += 1;
     else
         playingGame.constrBuildingAccount[buildingChosen.id] = 1;
+
+    updateResourcesAfterConstruction(playingGame);
 
     console.log(playingGame.constrBuildingAccount); // to test
 

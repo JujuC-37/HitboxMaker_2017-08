@@ -109,7 +109,7 @@ const stonecutterConstr =   new ResourcesSet(0, 5, 0, 0);
 const stonecutterProd =     new ResourcesSet(0, 0, 5, 0);
 
 const minerConstr =         new ResourcesSet(0, 5, 5, 0);
-const minerProd =           new ResourcesSet(5, 0, 0, 0);
+const minerProd =           new ResourcesSet(0, 0, 0, 5);
 
 const townhallConstr =      new ResourcesSet(0, 10, 10, 10);
 const townhallProd =        new ResourcesSet(0, 0, 0, 0);
