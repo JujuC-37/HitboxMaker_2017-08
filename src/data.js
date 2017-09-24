@@ -63,7 +63,7 @@ const logLogo =     new Image(require('./images/log.svg'), 'logo_log', 'Log');
 const stoneLogo =   new Image(require('./images/stone.svg'), 'logo_stone', 'Stone');
 const ironLogo =    new Image(require('./images/iron.svg'), 'logo_iron', 'Iron');
 
-const logosList = {
+export const logosList = {
     // a new building must be added in object buildingsList also
     farmer:     farmerLogo,
     woodcutter: woodcutterLogo,
@@ -95,7 +95,6 @@ export class ResourcesSet {
         this.stone = stone;
         this.iron = iron;
         // a new resources must be added in object logosList also
-        
     }
 }
 

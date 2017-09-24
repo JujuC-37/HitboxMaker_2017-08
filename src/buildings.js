@@ -1,5 +1,6 @@
 import {buildingsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
+import {createHtmlElementImg} from "./functions.js";
 
 
 // ------------------------------------------------------------------------------------------
@@ -11,11 +12,9 @@ export function createBuildingsList() {
     let content = '';
 
     Object.keys(buildingsList).forEach( key => {
-        content += `<div class="selectableTool building" id="${buildingsList[key].id}_toolsList">
-                <img src="${buildingsList[key].logo.src}" alt="${buildingsList[key].logo.alt}" title="${buildingsList[key].logo.title}">
-            </div>`
+        content += `<div class="selectableTool building" id="${buildingsList[key].id}_toolsList">${createHtmlElementImg(buildingsList[key].logo)}</div>`;
     } );
-
+    
     return content;
 }
 
@@ -49,5 +48,5 @@ function applyConstruction(tileDiv, tile, playingGame) {
     console.log(playingGame.constrBuildingAccount); // to test
 
     // update html
-    tileDiv.innerHTML = `<img src="${buildingChosen.logo.src}" alt="${buildingChosen.logo.alt}" title="${buildingChosen.logo.title}">`;
+    tileDiv.innerHTML = createHtmlElementImg(buildingChosen.logo);
 }

@@ -14,6 +14,10 @@ header{
     padding: 5px;
 }
 
+#dataBar{
+    /* in dataCityBar.css*/
+}
+
 #playArea{
     display: flex;
     flex-direction: row;

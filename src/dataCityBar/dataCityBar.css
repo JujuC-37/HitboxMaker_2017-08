@@ -1,5 +1,24 @@
+:root{
+    --maxHeightImg: 20px;
+    --maxWidthImg: 30px;
+    --widthDivDataBar: 60px;
+}
+
 #dataBar{
-    height: 90px;
     background-color: #C2EFB3;
     padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#dataBar div{
+    width: var(--widthDivDataBar);
+}
+
+#dataBar img{
+    max-height: var(--maxHeightImg);
+    max-width: var(--maxWidthImg);
+    vertical-align: middle;
 }

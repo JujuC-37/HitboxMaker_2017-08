@@ -1,5 +1,6 @@
 import {instrumentsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
+import {createHtmlElementImg} from "./functions.js";
 
 // ------------------------------------------------------------------------------------------
 // ---------------------------------------- HTML List ---------------------------------------
@@ -10,9 +11,7 @@ export function createInstrumentsList() {
     let content = '';
 
     Object.keys(instrumentsList).forEach( key => {
-        content += `<div class="selectableTool instruments" id="${instrumentsList[key].id}_toolsList">
-                <img src="${instrumentsList[key].logo.src}" alt="${instrumentsList[key].logo.alt}" title="${instrumentsList[key].logo.title}">
-            </div>`
+        content += `<div class="selectableTool instruments" id="${instrumentsList[key].id}_toolsList">${createHtmlElementImg(instrumentsList[key].logo)}</div>`
     } );
 
     return content;

@@ -14,7 +14,7 @@ const cityMap = createMap(8, 12, 4);
 const initalResources = initializeResources();
 const playingGame = new PlayingGame(cityMap, initalResources);
 
-displayDataBar();
+displayDataBar(playingGame.resources);
 displayToolsBar();
 displayMap(cityMap);
 
