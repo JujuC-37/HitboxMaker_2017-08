@@ -7,7 +7,7 @@ import "./toolsBar.css";
 // ---------------------------------------- Display -----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// display tools bar element from 
+// displays tools bar element 
 export function displayToolsBar() {
     let $toolsList = document.getElementById('toolsList');
     $toolsList.innerHTML = createContentDivToolsList();
@@ -15,10 +15,10 @@ export function displayToolsBar() {
 
 
 // ------------------------------------------------------------------------------------------
-// ----------------------------------------- Content ----------------------------------------
+// ------------------------------------------ Local -----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// return content of div toolsList
+// returns content of div toolsList
 function createContentDivToolsList() {
     let content = '';
     content += createInstrumentsList();

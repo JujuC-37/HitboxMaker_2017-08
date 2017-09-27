@@ -5,7 +5,41 @@ import {CityMap, Tile} from "../data.js";
 // ---------------------------------------- Creation ----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// create an array 2 dimensions with objects of type Tile
+// creates an object of type CityMap
+export function createMap(nbLines, nbColumns, nbBackgrounds) {
+    
+    const tilesArray = createTilesArray(nbLines, nbColumns, nbBackgrounds);
+    const cityMap = new CityMap(nbLines, nbColumns, nbBackgrounds, tilesArray);
+    
+    return cityMap;
+}
+
+// completes the empty section "map" in html
+export function displayMap(cityMap) {
+    const $map = document.getElementById('map');
+    $map.innerHTML = createContentOfSectionHtmlMap(cityMap);
+}
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------ Using -----------------------------------------
+// ------------------------------------------------------------------------------------------
+
+// returns line number of tile with id tile (string) in parameter
+export function renderLineOfTile(tileID) {
+    return tileID.split('_')[0].split('-')[1];
+}
+
+// returns column number of tile with id tile (string) in parameter
+export function renderColumnOfTile(tileID) {
+    return tileID.split('_')[1].split('-')[1];
+}
+
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------ Local -----------------------------------------
+// ------------------------------------------------------------------------------------------
+
+// creates an array 2 dimensions with objects of type Tile
 function createTilesArray(nbLines, nbColumns, nbBackgrounds) {
     const tilesArray = Array(nbLines).fill(null);
     
@@ -21,16 +55,7 @@ function createTilesArray(nbLines, nbColumns, nbBackgrounds) {
     return tilesArray;
 }
 
-// create an object of type CityMap
-export function createMap(nbLines, nbColumns, nbBackgrounds) {
-    
-    const tilesArray = createTilesArray(nbLines, nbColumns, nbBackgrounds);
-    const cityMap = new CityMap(nbLines, nbColumns, nbBackgrounds, tilesArray);
-    
-    return cityMap;
-}
-
-// create a table to complete section "map" in html
+// creates a table to complete section "map" in html
 function createContentOfSectionHtmlMap(cityMap) {
     let content = `<table>`;
 
@@ -45,24 +70,4 @@ function createContentOfSectionHtmlMap(cityMap) {
     }
 
     return content;
-}
-
-// complete the empty section "map" in html
-export function displayMap(cityMap) {
-    const $map = document.getElementById('map');
-    $map.innerHTML = createContentOfSectionHtmlMap(cityMap);
-}
-
-// ------------------------------------------------------------------------------------------
-// ------------------------------------------ Using -----------------------------------------
-// ------------------------------------------------------------------------------------------
-
-// return line number of tile with id tile (string) in parameter
-export function renderLineOfTile(tileID) {
-    return tileID.split('_')[0].split('-')[1];
-}
-
-// return column number of tile with id tile (string) in parameter
-export function renderColumnOfTile(tileID) {
-    return tileID.split('_')[1].split('-')[1];
 }

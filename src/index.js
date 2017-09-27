@@ -14,7 +14,7 @@ const cityMap = createMap(8, 12, 4);
 const initalResources = initializeResources();
 const playingGame = new PlayingGame(cityMap, initalResources);
 
-displayDataBar(playingGame.resources);
+displayDataBar(initalResources);
 displayToolsBar();
 displayMap(cityMap);
 
@@ -26,7 +26,7 @@ console.log(playingGame); // to test
 let selectableToolsList = document.getElementsByClassName('selectableTool');
 let mapTiles = document.getElementsByClassName('tile');
 
-// ----- events for tools list -----
+// -------------------- events for tools list --------------------
 for(let tool of selectableToolsList) {
 
     tool.addEventListener('click', e => {
@@ -52,7 +52,7 @@ for(let tool of selectableToolsList) {
     });
 }
 
-// ----- events for tile ----
+// ----------------------- events for tile -----------------------
 for(let tile of mapTiles) {
 
     tile.addEventListener('click', e => {
@@ -60,20 +60,23 @@ for(let tile of mapTiles) {
 
         if(!playingGame.selectedTool) return;
         
-        if(playingGame.typeSelectedTool === 'building') {
-            constructBuildingOnTile(tile, playingGame);
-            console.log(playingGame); // to test
-        }
-        else if(playingGame.typeSelectedTool === 'instrument') {
-            useInstrument(tile, playingGame);
-            console.log(playingGame); // to test
-        }
-        displayDataBar(playingGame.resources); // to test update
+        switch(playingGame.typeSelectedTool) {
+            case 'building': 
+                constructBuildingOnTile(tile, playingGame);
+                console.log(playingGame); // to test
+                break;
 
+            case 'instrument':
+                useInstrument(tile, playingGame);
+                console.log(playingGame); // to test
+                break;
+
+        }
+        displayDataBar(playingGame.actualResources); // to test update
     });
 }
 
-// ----- general -----
+// --------------------------- general ---------------------------
 document.addEventListener('click', e => {
     // style : reset style for all tools
     for(let t of selectableToolsList) {

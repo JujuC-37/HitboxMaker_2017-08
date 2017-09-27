@@ -17,9 +17,8 @@ export function createInstrumentsList() {
     return content;
 }
 
-
 // ------------------------------------------------------------------------------------------
-// ----------------------------------------- General ----------------------------------------
+// ----------------------------------------- Using ----------------------------------------
 // ------------------------------------------------------------------------------------------
 
 // apply function according to chosen instruments (in parameter playingGame) on chosen tile (in parameter tile)
@@ -37,7 +36,7 @@ export function useInstrument(tileDiv, playingGame) {
 
 
 // ------------------------------------------------------------------------------------------
-// ------------------------------------------ Using -----------------------------------------
+// ------------------------------------------ Local -----------------------------------------
 // ------------------------------------------------------------------------------------------
 
 // remove building on tile
@@ -53,5 +52,4 @@ function useBroom(tileDiv, tile, playingGame) {
 
     // to test
     console.log('building removed !'); // to test
-    console.log(playingGame.constrBuildingAccount); // to test
 }

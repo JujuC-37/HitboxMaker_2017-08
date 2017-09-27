@@ -1,6 +1,7 @@
 // ---------------------------------------------------------------------------------------
 // --------------------------------------- General ---------------------------------------
 // ---------------------------------------------------------------------------------------
+// here there are classes. Objects of each classes are declared below in this file
 
 export class Tile {
     constructor(idBackground, building) {
@@ -25,14 +26,19 @@ export class PlayingGame {
         this.selectedTool = null;
         this.selectedTile = null;
         this.typeSelectedTool = null;
-        this.resources = resources;
+        this.actualResources = resources;
     }
 }
 
-
-// ---------------------------------------------------------------------------------------
-// --------------------------------------- Images ----------------------------------------
-// ---------------------------------------------------------------------------------------
+export class ResourcesSet {
+    constructor(food, log, stone, iron) {
+        this.food = food;
+        this.log = log;
+        this.stone = stone;
+        this.iron = iron;
+        // a new resources must be added in object logosList also
+    }
+}
 
 class Image {
     constructor(src, alt, title) {
@@ -41,6 +47,33 @@ class Image {
         this.title = title;
     }
 }
+
+class Instrument {
+    constructor(id, name, descr, logo) {
+        this.id = id;
+        this.name = name;
+        this.descr = descr;
+        this.logo = logo;
+    }
+}
+
+class Building {
+    constructor(id, name, descr, logo, construction, production) {
+        this.id = id;
+        this.name = name;
+        this.descr = descr;
+        this.logo = logo;
+        this.constr = construction;
+        this.prod = production;
+    }
+}
+
+// here there are lists. Objects of each lists are declared below in this file
+
+
+// ---------------------------------------------------------------------------------------
+// --------------------------------------- Images ----------------------------------------
+// ---------------------------------------------------------------------------------------
 
 // ----- Buildings -----
 const farmerLogo =      new Image(require('./images/farmer.svg'), 'logo_farmer', 'Farmer');
@@ -84,21 +117,12 @@ export const logosList = {
     iron:       ironLogo
 };
 
+
 // ---------------------------------------------------------------------------------------
 // -------------------------------------- Resources --------------------------------------
 // ---------------------------------------------------------------------------------------
 
-export class ResourcesSet {
-    constructor(food, log, stone, iron) {
-        this.food = food;
-        this.log = log;
-        this.stone = stone;
-        this.iron = iron;
-        // a new resources must be added in object logosList also
-    }
-}
-
-// to adjust
+// values to adjust
 const farmerConstr =        new ResourcesSet(0, 5, 0, 0);
 const farmerProd =          new ResourcesSet(5, 0, 0, 0);
 
@@ -131,61 +155,40 @@ const wellProd =            new ResourcesSet(5, 0, 0, 0);
 
 
 // ---------------------------------------------------------------------------------------
-// -------------------------------------- Buildings --------------------------------------
-// ---------------------------------------------------------------------------------------
-
-class Building {
-    constructor(id, name, descr, logo, construction, production) {
-        this.id = id;
-        this.name = name;
-        this.descr = descr;
-        this.logo = logo;
-        this.constr = construction;
-        this.prod = production;
-    }
-}
-
-const farmerObject =      new Building('farmer', logosList.farmer, 'Products food', logosList.farmer, farmerConstr, farmerProd);
-const woodcutterObject =  new Building('woodcutter', logosList.woodcutter, 'Products log', logosList.woodcutter, woodcutterConstr, woodcutterProd);
-const stonecutterObject = new Building('stonecutter', logosList.stonecutter, 'Products stone', logosList.stonecutter, stonecutterConstr, stonecutterProd);
-const minerObject =       new Building('miner', logosList.miner, 'Products iron', logosList.miner, minerConstr, minerProd);
-const townhallObject =    new Building('townhall', logosList.townhall, 'Indicates informations city', logosList.townhall, townhallConstr, townhallProd);
-const hospitalObject =    new Building('hospital', logosList.hospital, 'Provides care', logosList.hospital, hospitalConstr, hospitalProd);
-const circusObject =      new Building('circus', logosList.circus, 'Improves happiness', logosList.circus, circusConstr, circusProd);
-const innObject =         new Building('inn', logosList.inn, 'Improves happiness', logosList.inn, innConstr, innProd);
-const watchTowerObject =  new Building('watchTower', logosList.watchTower, 'Manages security', logosList.watchTower, watchTowerConstr, watchTowerProd);
-const wellObject =        new Building('well', logosList.well, 'Products water', logosList.well, wellConstr, wellProd);
-
-export const buildingsList = {
-    // a new building must be added in object logosList also
-    farmer:      farmerObject,
-    woodcutter:  woodcutterObject,
-    stonecutter: stonecutterObject,
-    miner:       minerObject,
-    townhall:    townhallObject,
-    hospital:    hospitalObject,
-    circus:      circusObject,
-    inn:         innObject,
-    watchTower:  watchTowerObject,
-    well:       wellObject
-}
-
-// ---------------------------------------------------------------------------------------
 // ------------------------------------- Instruments -------------------------------------
 // ---------------------------------------------------------------------------------------
-
-class Instrument {
-    constructor(id, name, descr, logo) {
-        this.id = id;
-        this.name = name;
-        this.descr = descr;
-        this.logo = logo;
-    }
-}
-
 const broomObject = new Instrument('broom', 'Broom', 'Remove building', logosList.broom);
 
 export const instrumentsList = {
     // a new instrument must be added in object logosList also
     broom: broomObject
 };
+
+// ---------------------------------------------------------------------------------------
+// -------------------------------------- Buildings --------------------------------------
+// ---------------------------------------------------------------------------------------
+
+const farmerObject =      new Building('farmer', 'Farmer', 'Products food', logosList.farmer, farmerConstr, farmerProd);
+const woodcutterObject =  new Building('woodcutter', 'Woodcutter', 'Products log', logosList.woodcutter, woodcutterConstr, woodcutterProd);
+const stonecutterObject = new Building('stonecutter', 'Stonecutter', 'Products stone', logosList.stonecutter, stonecutterConstr, stonecutterProd);
+const minerObject =       new Building('miner', 'Miner', 'Products iron', logosList.miner, minerConstr, minerProd);
+const townhallObject =    new Building('townhall', 'Townhall', 'Indicates informations city', logosList.townhall, townhallConstr, townhallProd);
+const hospitalObject =    new Building('hospital', 'Hospital', 'Provides care', logosList.hospital, hospitalConstr, hospitalProd);
+const circusObject =      new Building('circus', 'Circus', 'Improves happiness', logosList.circus, circusConstr, circusProd);
+const innObject =         new Building('inn', 'Inn', 'Improves happiness', logosList.inn, innConstr, innProd);
+const watchTowerObject =  new Building('watchTower', 'Watchtower', 'Manages security', logosList.watchTower, watchTowerConstr, watchTowerProd);
+const wellObject =        new Building('well', 'Well', 'Products water', logosList.well, wellConstr, wellProd);
+
+export const buildingsList = {
+    // a new building must be added in object logosList also
+    farmer:     farmerObject,
+    woodcutter: woodcutterObject,
+    stonecutter: stonecutterObject,
+    miner:      minerObject,
+    townhall:   townhallObject,
+    hospital:   hospitalObject,
+    circus:     circusObject,
+    inn:        innObject,
+    watchTower: watchTowerObject,
+    well:       wellObject
+}

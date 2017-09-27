@@ -8,7 +8,7 @@ import {createHtmlElementImg} from "./functions.js";
 // ---------------------------------------- HTML List ---------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// create html content of buildings list (div, img) from buildingsList object
+// creates html content of buildings list (div, img) from buildingsList object
 export function createBuildingsList() {
     let content = '';
 
@@ -20,10 +20,10 @@ export function createBuildingsList() {
 }
 
 // ------------------------------------------------------------------------------------------
-// -------------------------------------- Construction --------------------------------------
+// ----------------------------------------- Using ------------------------------------------
 // ------------------------------------------------------------------------------------------
 
-// construct building on tile (parameters) with applyConstruction function if validated verification
+// constructs building on tile (parameters) with applyConstruction function if validated verification
 export function constructBuildingOnTile(tileDiv, playingGame) {
     let lineTile = renderLineOfTile(tileDiv.id);
     let columnTile = renderColumnOfTile(tileDiv.id);
@@ -35,7 +35,12 @@ export function constructBuildingOnTile(tileDiv, playingGame) {
         console.log('tile is not empty...');
 }
 
-// add building to the tile (parameters) : update data, html content
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------ Local -----------------------------------------
+// ------------------------------------------------------------------------------------------
+
+// adds building to the tile (parameters) : update data, html content
 function applyConstruction(tileDiv, tile, playingGame) {
     let buildingChosen = playingGame.selectedTool;
     tile.building = buildingChosen;
@@ -47,8 +52,6 @@ function applyConstruction(tileDiv, tile, playingGame) {
         playingGame.constrBuildingAccount[buildingChosen.id] = 1;
 
     updateResourcesAfterConstruction(playingGame);
-
-    console.log(playingGame.constrBuildingAccount); // to test
 
     // update html
     tileDiv.innerHTML = createHtmlElementImg(buildingChosen.logo);

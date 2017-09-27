@@ -2,7 +2,11 @@ import "./dataCityBar.css";
 import {logosList} from "../data.js";
 import {createHtmlElementImg} from "../functions.js";
 
-// display html content of data bar
+// ------------------------------------------------------------------------------------------
+// ----------------------------------------- Display ----------------------------------------
+// ------------------------------------------------------------------------------------------
+
+// displays html content of data bar
 export function displayDataBar(resources) {
     const $dataBar = document.getElementById('dataBar');
     let content = '';
@@ -13,3 +17,8 @@ export function displayDataBar(resources) {
     
     $dataBar.innerHTML = content;
 }
+
+
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------ Local -----------------------------------------
+// ------------------------------------------------------------------------------------------
