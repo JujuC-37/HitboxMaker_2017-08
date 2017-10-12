@@ -1,0 +1,21 @@
+:root{
+    --marginRightMenuButtons: 25px;
+    --paddingMenuButtons: 5px;
+
+    --maxHeightImg: 20px;
+    --maxWidthImg: 30px;
+}
+
+#menuButtons {
+    display: flex;
+    flex-direction: row;
+    background-color: #BAD3F1;
+
+    margin-right: var(--marginRightMenuButtons);
+    padding: var(--paddingMenuButtons);
+}
+
+#menuButtons img{
+    max-height: var(--maxHeightImg);
+    max-width: var(--maxWidthImg);
+}

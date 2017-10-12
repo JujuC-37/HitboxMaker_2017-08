@@ -2,15 +2,14 @@
     --maxHeightImg: 20px;
     --maxWidthImg: 30px;
     --widthDivDataBar: 60px;
+    --paddingDataCityBar: 5px;
 }
 
 #dataBar{
-    background-color: #C2EFB3;
-    padding: 5px;
+    padding: var(--paddingDataCityBar);
 
     display: flex;
     flex-direction: row;
-    /* justify-content: space-around; */
 }
 
 #dataBar div{

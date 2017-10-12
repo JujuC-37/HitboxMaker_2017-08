@@ -68,8 +68,12 @@ class Building {
     }
 }
 
-// here there are lists. Objects of each lists are declared below in this file
-
+class MenuButtons {
+    constructor(id, logo) {
+        this.id = id;
+        this.logo = logo;
+    }
+}
 
 // ---------------------------------------------------------------------------------------
 // --------------------------------------- Images ----------------------------------------
@@ -96,6 +100,11 @@ const logLogo =     new Image(require('./images/log.svg'), 'logo_log', 'Log');
 const stoneLogo =   new Image(require('./images/stone.svg'), 'logo_stone', 'Stone');
 const ironLogo =    new Image(require('./images/iron.svg'), 'logo_iron', 'Iron');
 
+// ----- Buttons -----
+const playLogo =    new Image(require('./images/play.svg'), 'logo_play', 'Play');
+const pauseLogo =   new Image(require('./images/pause.svg'), 'logo_pause', 'Pause');
+const stopLogo =    new Image(require('./images/stop.svg'), 'logo_stop', 'Stop');
+
 export const logosList = {
     // a new building must be added in object buildingsList also
     farmer:     farmerLogo,
@@ -114,9 +123,26 @@ export const logosList = {
     food:       foodLogo,
     log:        logLogo,
     stone:      stoneLogo,
-    iron:       ironLogo
+    iron:       ironLogo,
+    // a new button must be added in class MenuButtons also
+    play:       playLogo,
+    pause:      pauseLogo,
+    stop:       stopLogo
 };
 
+// ---------------------------------------------------------------------------------------
+// ----------------------------------------- Menu ----------------------------------------
+// ---------------------------------------------------------------------------------------
+
+const playButton =  new MenuButtons('playButton', logosList.play)
+const pauseButton = new MenuButtons('pauseButton', logosList.pause);
+const stopButton =  new MenuButtons('stopButton', logosList.stop);
+
+export const buttonsList = {
+    play:   playButton,
+    pause:  pauseButton,
+    stop:   stopButton
+}
 
 // ---------------------------------------------------------------------------------------
 // -------------------------------------- Resources --------------------------------------

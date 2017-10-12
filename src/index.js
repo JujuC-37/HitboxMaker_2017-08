@@ -1,4 +1,5 @@
 import "./style.css";
+import {displayButtonsMenu, useMenuButton} from "./menuButtons/menuButtons.js";
 import {displayDataBar} from "./dataCityBar/dataCityBar.js";
 import {createMap, displayMap} from "./map/map.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
@@ -8,23 +9,50 @@ import {useInstrument} from "./instruments.js";
 import {initializeResources} from "./resources.js";
 
 // ------------------------------------------------------------------------------------------
-// ----------------------------------------- Initial ----------------------------------------
+// ----------------------------------------- General ----------------------------------------
 // ------------------------------------------------------------------------------------------
+
+// --------------------------- initial ---------------------------
 const cityMap = createMap(8, 12, 4);
 const initalResources = initializeResources();
 const playingGame = new PlayingGame(cityMap, initalResources);
 
+displayButtonsMenu()
 displayDataBar(initalResources);
 displayToolsBar();
 displayMap(cityMap);
 
 console.log(playingGame); // to test
 
+// --------------------------- update ---------------------------
+
+
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Events -----------------------------------------
 // ------------------------------------------------------------------------------------------
+let menuButtons = document.getElementsByClassName('menuButton');
 let selectableToolsList = document.getElementsByClassName('selectableTool');
 let mapTiles = document.getElementsByClassName('tile');
+
+
+// --------------------------- general ---------------------------
+document.addEventListener('click', e => {
+    // style : reset style for all tools
+    for(let t of selectableToolsList) {
+        t.classList.remove('selectedTool');
+    }
+
+    // reset selected tool properties of playingGame
+    playingGame.selectedTool = null;
+    playingGame.typeSelectedTool = null;
+});
+
+for(let b of menuButtons) {
+    b.addEventListener('click', e => {
+        e.stopPropagation();
+        useMenuButton(b.id);        
+    });
+}
 
 // -------------------- events for tools list --------------------
 for(let tool of selectableToolsList) {
@@ -75,15 +103,3 @@ for(let tile of mapTiles) {
         displayDataBar(playingGame.actualResources); // to test update
     });
 }
-
-// --------------------------- general ---------------------------
-document.addEventListener('click', e => {
-    // style : reset style for all tools
-    for(let t of selectableToolsList) {
-        t.classList.remove('selectedTool');
-    }
-
-    // reset selected tool properties of playingGame
-    playingGame.selectedTool = null;
-    playingGame.typeSelectedTool = null;
-})

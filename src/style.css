@@ -14,6 +14,12 @@ header{
     padding: 5px;
 }
 
+#menuBar{
+    display: flex;
+    flex-direction: row;
+    background-color: #C2EFB3;
+}
+
 #dataBar{
     /* in dataCityBar.css*/
 }
@@ -21,6 +27,7 @@ header{
 #playArea{
     display: flex;
     flex-direction: row;
+    background-color: #C2EFB3;
 }
 
 footer{
