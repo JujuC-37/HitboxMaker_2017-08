@@ -28,6 +28,10 @@
     max-height: var(--widthTileImg);
 }
 
+#map.pausePlaying .tile{
+    filter: grayscale(100%);
+}
+
 .backgroundTile_0{
     background-image: url("../images/tile_green_00.svg");
 }

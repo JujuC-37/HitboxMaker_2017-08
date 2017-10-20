@@ -34,6 +34,17 @@ export function renderColumnOfTile(tileID) {
     return tileID.split('_')[1].split('-')[1];
 }
 
+export function displayMapInPause(playingInPause) {
+    let $map = document.getElementById('map');
+    
+    if(playingInPause) {
+        $map.classList.add('pausePlaying');
+    }
+    else {
+        $map.classList.remove('pausePlaying');
+    }
+}
+
 
 // ------------------------------------------------------------------------------------------
 // ------------------------------------------ Local -----------------------------------------

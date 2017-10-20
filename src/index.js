@@ -50,7 +50,7 @@ document.addEventListener('click', e => {
 for(let b of menuButtons) {
     b.addEventListener('click', e => {
         e.stopPropagation();
-        useMenuButton(b.id);        
+        useMenuButton(b.id, playingGame);        
     });
 }
 
@@ -87,6 +87,10 @@ for(let tile of mapTiles) {
         e.stopPropagation();
 
         if(!playingGame.selectedTool) return;
+        if(playingGame.inPause) {
+            console.log('Pause is activated. You can\' play');
+            return;
+        }
         
         switch(playingGame.typeSelectedTool) {
             case 'building': 

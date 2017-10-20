@@ -27,6 +27,7 @@ export class PlayingGame {
         this.selectedTile = null;
         this.typeSelectedTool = null;
         this.actualResources = resources;
+        this.inPause = false;
     }
 }
 
@@ -101,9 +102,9 @@ const stoneLogo =   new Image(require('./images/stone.svg'), 'logo_stone', 'Ston
 const ironLogo =    new Image(require('./images/iron.svg'), 'logo_iron', 'Iron');
 
 // ----- Buttons -----
-const playLogo =    new Image(require('./images/play.svg'), 'logo_play', 'Play');
+// const playLogo =    new Image(require('./images/play.svg'), 'logo_play', 'Play');
 const pauseLogo =   new Image(require('./images/pause.svg'), 'logo_pause', 'Pause');
-const stopLogo =    new Image(require('./images/stop.svg'), 'logo_stop', 'Stop');
+const stopLogo =    new Image(require('./images/stop.svg'), 'logo_stop', 'Abandon');
 
 export const logosList = {
     // a new building must be added in object buildingsList also
@@ -125,7 +126,7 @@ export const logosList = {
     stone:      stoneLogo,
     iron:       ironLogo,
     // a new button must be added in class MenuButtons also
-    play:       playLogo,
+    //play:       playLogo,
     pause:      pauseLogo,
     stop:       stopLogo
 };
@@ -134,12 +135,12 @@ export const logosList = {
 // ----------------------------------------- Menu ----------------------------------------
 // ---------------------------------------------------------------------------------------
 
-const playButton =  new MenuButtons('playButton', logosList.play)
+//const playButton =  new MenuButtons('playButton', logosList.play)
 const pauseButton = new MenuButtons('pauseButton', logosList.pause);
 const stopButton =  new MenuButtons('stopButton', logosList.stop);
 
 export const buttonsList = {
-    play:   playButton,
+    //play:   playButton,
     pause:  pauseButton,
     stop:   stopButton
 }

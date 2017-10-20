@@ -1,6 +1,7 @@
 import "./menuButtons.css";
 import {logosList, buttonsList} from "../data.js";
 import {createHtmlElementImg} from "../functions.js";
+import {displayMapInPause} from "../map/map.js";
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Display ----------------------------------------
@@ -18,13 +19,13 @@ export function displayButtonsMenu() {
     $menuButtons.innerHTML = content;
 }
 
-export function useMenuButton(idButton) {
+export function useMenuButton(idButton, playingGame) {
     switch(idButton) {
         case 'playButton':
                 usePlayButton();
                 break;
         case 'pauseButton':
-                usePauseButton();
+                usePauseButton(playingGame);
                 break;
         case 'stopButton':
                 useStopButton();
@@ -38,13 +39,16 @@ export function useMenuButton(idButton) {
 // ------------------------------------------ Local -----------------------------------------
 // ------------------------------------------------------------------------------------------
 function usePlayButton() {
-    console.log('playButton');
+    console.log('playButton'); // to test
 }
 
-function usePauseButton() {
-    console.log('pauseButton');
+function usePauseButton(playingGame) {
+    playingGame.inPause = !playingGame.inPause;
+    displayMapInPause(playingGame.inPause);
+
+    console.log('pauseButton', playingGame.inPause); // to test
 }
 
 function useStopButton() {
-    console.log('stopButton');
+    console.log('stopButton'); // to test
 }
