@@ -1,7 +1,7 @@
 import "./style.css";
-import {displayButtonsMenu, useMenuButton} from "./menuButtons/menuButtons.js";
 import {displayDataBar} from "./dataCityBar/dataCityBar.js";
 import {createMap, displayMap} from "./map/map.js";
+import {displayButtonsMenu, useMenuButton} from "./menuButtons/menuButtons.js";
 import {displayToolsBar} from "./toolsBar/toolsBar.js";
 import {PlayingGame, instrumentsList, buildingsList} from "./data.js";
 import {constructBuildingOnTile} from "./buildings.js";
@@ -25,7 +25,7 @@ displayMap(cityMap);
 console.log(playingGame); // to test
 
 // --------------------------- update ---------------------------
-
+// TODO
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Events -----------------------------------------

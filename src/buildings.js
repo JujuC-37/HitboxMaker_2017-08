@@ -1,5 +1,5 @@
-import {buildingsList} from "./data.js";
 import {renderLineOfTile, renderColumnOfTile} from "./map/map.js";
+import {buildingsList} from "./data.js";
 import {updateResourcesAfterConstruction} from "./resources.js";
 import {createHtmlElementImg} from "./functions.js";
 

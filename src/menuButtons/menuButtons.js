@@ -1,7 +1,7 @@
 import "./menuButtons.css";
+import {displayMapInPause} from "../map/map.js";
 import {logosList, buttonsList} from "../data.js";
 import {createHtmlElementImg} from "../functions.js";
-import {displayMapInPause} from "../map/map.js";
 
 // ------------------------------------------------------------------------------------------
 // ----------------------------------------- Display ----------------------------------------

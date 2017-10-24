@@ -1,4 +1,6 @@
-// general functions, independent of project
+// ------------------------------------------------------------------------------------------
+// ------------------------ general functions, independent of project -----------------------
+// ------------------------------------------------------------------------------------------
 
 // returns html element img from object (parameter) with attributes src, alt and title
 export function createHtmlElementImg(image){

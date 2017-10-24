@@ -1,6 +1,6 @@
+import "./toolsBar.css";
 import {createBuildingsList} from "../buildings.js";
 import {createInstrumentsList} from "../instruments.js";
-import "./toolsBar.css";
 
 
 // ------------------------------------------------------------------------------------------
