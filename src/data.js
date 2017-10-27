@@ -25,7 +25,6 @@ export class PlayingGame {
         this.constrBuildingAccount = {}; // to count number of constructed building for each type building already used
         this.selectedTool = null;
         this.selectedTile = null;
-        this.typeSelectedTool = null;
         this.actualResources = resources;
         this.inPause = false;
     }
@@ -52,6 +51,7 @@ class Image {
 class Instrument {
     constructor(id, name, descr, logo) {
         this.id = id;
+        this.type = 'instrument';
         this.name = name;
         this.descr = descr;
         this.logo = logo;
@@ -61,6 +61,7 @@ class Instrument {
 class Building {
     constructor(id, name, descr, logo, construction, production) {
         this.id = id;
+        this.type = 'building';
         this.name = name;
         this.descr = descr;
         this.logo = logo;

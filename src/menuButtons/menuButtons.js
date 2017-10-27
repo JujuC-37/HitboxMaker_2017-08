@@ -7,7 +7,7 @@ import {createHtmlElementImg} from "../functions.js";
 // ----------------------------------------- Display ----------------------------------------
 // ------------------------------------------------------------------------------------------
 
-//displays html content of buttons in menu
+// displays html content of buttons in menu
 export function displayButtonsMenu() {
     const $menuButtons = document.getElementById('menuButtons');
     let content = '';
@@ -19,11 +19,12 @@ export function displayButtonsMenu() {
     $menuButtons.innerHTML = content;
 }
 
+// calls function relative to parameter
 export function useMenuButton(idButton, playingGame) {
     switch(idButton) {
-        case 'playButton':
-                usePlayButton();
-                break;
+        // case 'playButton':
+        //         usePlayButton();
+        //         break;
         case 'pauseButton':
                 usePauseButton(playingGame);
                 break;

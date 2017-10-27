@@ -1,6 +1,11 @@
 :root{
-    --sizeTile: 60px;
+    --nbLines:   8;
+    --nbColumns: 12;
+    --sizeTile:  65px;
     --widthTileImg: 55px;
+
+    --widthSetTiles:  calc(var(--sizeTile) * var(--nbColumns));
+    --heightSetTiles: calc(var(--sizeTile) * var(--nbLines));
 }
 
 #map{
@@ -9,10 +14,16 @@
     flex: 1;
 }
 
-#map table{
-    border-collapse: collapse;
-    border: none;
+/* there are other properties defined in .js */
+#setTiles{
+    width: var(--widthSetTiles);
+    height: var(--heightSetTiles);
     margin: auto;
+    border: 0.5px solid grey;
+
+    display: grid;
+    grid-template-rows: repeat(var(--nbLines), 1fr);
+    grid-template-columns: repeat(var(--nbColumns), 1fr);
 }
 
 .tile{
@@ -20,7 +31,8 @@
     width: var(--sizeTile);
     background-size: var(--sizeTile) var(--sizeTile);
     text-align: center;
-    border: 1px solid grey;
+    border: 0.5px solid grey;
+    box-sizing: border-box;
 }
 
 .tile img{

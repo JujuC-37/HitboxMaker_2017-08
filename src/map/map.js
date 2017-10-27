@@ -17,7 +17,8 @@ export function createMap(nbLines, nbColumns, nbBackgrounds) {
 // completes the empty section "map" in html
 export function displayMap(cityMap) {
     const $map = document.getElementById('map');
-    $map.innerHTML = createContentOfSectionHtmlMap(cityMap);
+    updateVariablesCss(cityMap);
+    createContentOfSectionHtmlMap(cityMap);
 }
 
 // ------------------------------------------------------------------------------------------
@@ -68,17 +69,25 @@ function createTilesArray(nbLines, nbColumns, nbBackgrounds) {
 
 // creates a table to complete section "map" in html
 function createContentOfSectionHtmlMap(cityMap) {
-    let content = `<table>`;
+    let $map = document.getElementById('map');
 
-    for(let line = 0; line < cityMap.nbLines; line++){
-        content += `<tr>`;
+    let $setTiles = document.createElement('div');
+    $setTiles.id = 'setTiles';
 
+    for(let line = 0; line < cityMap.nbLines; line++) {
         for(let col = 0; col < cityMap.nbColumns; col++) {
-            content += `<td id="lin-${line}_col-${col}" class="tile backgroundTile_${cityMap.arrayTiles[line][col].background}"></td>`;
-        }
+            let $tile = document.createElement('div');
+            $tile.id = `lin-${line}_col-${col}`;
+            $tile.classList.add('tile', `backgroundTile_${cityMap.arrayTiles[line][col].background}`);
 
-        content += `</tr>`;        
+            $setTiles.appendChild($tile);
+        }
     }
 
-    return content;
+    $map.appendChild($setTiles);
+}
+
+function updateVariablesCss(cityMap) {
+    document.documentElement.style.setProperty('--nbLines', cityMap.nbLines);
+    document.documentElement.style.setProperty('--nbColumns', cityMap.nbColumns);
 }

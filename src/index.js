@@ -44,7 +44,6 @@ document.addEventListener('click', e => {
 
     // reset selected tool properties of playingGame
     playingGame.selectedTool = null;
-    playingGame.typeSelectedTool = null;
 });
 
 for(let b of menuButtons) {
@@ -69,11 +68,9 @@ for(let tool of selectableToolsList) {
         // save selected tool
         if(tool.classList.contains('instruments')) {
             playingGame.selectedTool = instrumentsList[tool.id.split('_')[0]];
-            playingGame.typeSelectedTool = 'instrument';
         }
         else if (tool.classList.contains('building')) {
             playingGame.selectedTool = buildingsList[tool.id.split('_')[0]];
-            playingGame.typeSelectedTool = 'building';
         }
         else
             return;
@@ -92,7 +89,7 @@ for(let tile of mapTiles) {
             return;
         }
         
-        switch(playingGame.typeSelectedTool) {
+        switch(playingGame.selectedTool.type) {
             case 'building': 
                 constructBuildingOnTile(tile, playingGame);
                 console.log(playingGame); // to test
